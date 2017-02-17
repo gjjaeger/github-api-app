@@ -4,8 +4,9 @@ var displayID= function(id){
 	$('.showInfo').text("This account has the following ID associated with it: " + id);
 	$('#username').val("");
 };
-displayrepName= function(repName,repDate){
+displayrepName= function(repName, repdesc, repDate){
 	$('#colName').append("<li>" + repName + "</li>");
+	$('#colDesc').append("<li>" + repdesc + "</li>");
 	$('#colDate').append("<li>" + repDate + "</li>");
 	$('#username').val("");
 	$('#datatable').css("display","block");
@@ -17,6 +18,7 @@ $(document).ready(function(){
 		var newuser= new User(username);
 		$('#colName').empty();
 		$('#colDate').empty();
+		$('#colDesc').empty();
 		$('.showInfo').empty();
 		$('#datatable').hide();
 		switch (this.id){

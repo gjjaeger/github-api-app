@@ -26,7 +26,7 @@ User.prototype.getrepName= function(displayFunction){
 		var projectArray= response;
 		for (var i =0; i<projectArray.length;i++){
 			var creationDate = (projectArray[i].created_at);
-			displayFunction((projectArray[i].name), (moment(creationDate).format('LLL')));
+			displayFunction((projectArray[i].name), (projectArray[i].description), (moment(creationDate).format('LLL')));
 		}
 	}).fail(function(error) {
     $('.showInfo').text(error.responseJSON.message);
